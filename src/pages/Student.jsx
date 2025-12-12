@@ -22,14 +22,14 @@ const Student = () => {
   const handleClose = () => {
     setLoading(true);
     axios
-      .post('https://backend-again-d5wz.onrender.com/createstudent', {
+      .post('https://backend-again-1.onrender.com/createstudent', {
         studentname,
         departmentname,
         studentid,
         phonenumber,
       })
       .then(() => {
-        axios.get('https://backend-again-d5wz.onrender.com/allstudent').then(data => {
+        axios.get('https://backend-again-1.onrender.com/allstudent').then(data => {
           setStudentList(data.data);
           setLoading(false);
           setShow(false);
@@ -53,14 +53,14 @@ const Student = () => {
   const handleCloseForUpdate = () => {
     setLoading(true);
     axios
-      .patch(`https://backend-again-d5wz.onrender.com/student/${studentid}`, {
+      .patch(`https://backend-again-1.onrender.com/student/${studentid}`, {
         studentname,
         departmentname,
         studentid,
         phonenumber,
       })
       .then(() => {
-        axios.get('https://backend-again-d5wz.onrender.com/allstudent').then(data => {
+        axios.get('https://backend-again-1.onrender.com/allstudent').then(data => {
           setStudentList(data.data);
           setLoading(false);
           setShow(false);
@@ -70,7 +70,7 @@ const Student = () => {
 
   const handleShowModal = id => {
     setUpdate(true);
-    axios.get(`https://backend-again-d5wz.onrender.com/student/${id}`).then(res => {
+    axios.get(`https://backend-again-1.onrender.com/student/${id}`).then(res => {
       const data = res.data[0];
       setDepartmentname(data.departmentname);
       setPhoneNumber(data.phonenumber);
@@ -88,18 +88,18 @@ const Student = () => {
   }, []);
 
   useEffect(() => {
-    axios.get('https://backend-again-d5wz.onrender.com/allstudent').then(data => {
+    axios.get('https://backend-again-1.onrender.com/allstudent').then(data => {
       setStudentList(data.data);
     });
   }, []);
 
   let handleDelete = id => {
     axios
-      .post('https://backend-again-d5wz.onrender.com/delete', {
+      .post('https://backend-again-1.onrender.com/delete', {
         id: id,
       })
       .then(() => {
-        axios.get('https://backend-again-d5wz.onrender.com/allstudent').then(data => {
+        axios.get('https://backend-again-1.onrender.com/allstudent').then(data => {
           setStudentList(data.data);
         });
       });

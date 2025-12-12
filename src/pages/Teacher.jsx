@@ -24,14 +24,14 @@ const Teacher = () => {
   const handleClose = () => {
     setLoading(true);
     axios
-      .post('https://backend-again-d5wz.onrender.com/createteacher', {
+      .post('https://backend-again-1.onrender.com/createteacher', {
         teachername,
         departmentname,
         teacherid,
         phonenumber,
       })
       .then(() => {
-        axios.get('https://backend-again-d5wz.onrender.com/allteacher').then((res) => {
+        axios.get('https://backend-again-1.onrender.com/allteacher').then((res) => {
           setTeacherList(res.data);
           setLoading(false);
           setShow(false);
@@ -43,14 +43,14 @@ const Teacher = () => {
   const handleUpdate = () => {
     setLoading(true);
     axios
-      .patch(`https://backend-again-d5wz.onrender.com/teacher/${editId}`, {
+      .patch(`https://backend-again-1.onrender.com/teacher/${editId}`, {
         teachername,
         departmentname,
         teacherid,
         phonenumber,
       })
       .then(() => {
-        axios.get('https://backend-again-d5wz.onrender.com/allteacher').then((res) => {
+        axios.get('https://backend-again-1.onrender.com/allteacher').then((res) => {
           setTeacherList(res.data);
           setLoading(false);
           setShow(false);
@@ -78,7 +78,7 @@ const Teacher = () => {
     setUpdate(true);
     setEditId(id);
 
-    axios.get(`https://backend-again-d5wz.onrender.com/teacher/${id}`).then((res) => {
+    axios.get(`https://backend-again-1.onrender.com/teacher/${id}`).then((res) => {
       const t = res.data[0];
       setTeacherName(t.teachername);
       setDepartmentName(t.departmentname);
@@ -98,7 +98,7 @@ const Teacher = () => {
 
   // Fetch all teachers
   useEffect(() => {
-    axios.get('https://backend-again-d5wz.onrender.com/allteacher').then((res) => {
+    axios.get('https://backend-again-1.onrender.com/allteacher').then((res) => {
       setTeacherList(res.data);
     });
   }, []);
@@ -106,9 +106,9 @@ const Teacher = () => {
   // Delete Teacher
   const handleDelete = (id) => {
     axios
-      .post('https://backend-again-d5wz.onrender.com/deleteteacher', { id })
+      .post('https://backend-again-1.onrender.com/deleteteacher', { id })
       .then(() => {
-        axios.get('https://backend-again-d5wz.onrender.com/allteacher').then((res) => {
+        axios.get('https://backend-again-1.onrender.com/allteacher').then((res) => {
           setTeacherList(res.data);
         });
       });

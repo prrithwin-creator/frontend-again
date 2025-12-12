@@ -15,7 +15,7 @@ const Payment = () => {
 
 
 let handlePayment = () => {
-axios.post("https://backend-again-d5wz.onrender.com/payment", {
+axios.post("https://backend-again-1.onrender.com/payment", {
   amount: 1000,
   studentname: JSON.parse(localStorage.getItem("userInfo")).username
 }).then((data) => {
@@ -30,7 +30,7 @@ window.location.href = data.data.payment_url
 }
 
   useEffect(() => {
-  axios.get("https://backend-again-d5wz.onrender.com/duepayment",).then((data) => {
+  axios.get("https://backend-again-1.onrender.com/duepayment",).then((data) => {
   setAmount(data.data)
 })
 },[])

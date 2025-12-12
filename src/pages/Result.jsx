@@ -19,7 +19,7 @@ const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
 
 useEffect(()=>{
-    axios.get("https://backend-again-d5wz.onrender.com/allstudent").then((data)=>{
+    axios.get("https://backend-again-1.onrender.com/allstudent").then((data)=>{
       console.log(data)
       setStudentList(data.data)
     });
@@ -47,7 +47,7 @@ useEffect(()=>{
   }
   
   let handleSubmit = () => {
-    axios.post("https://backend-again-d5wz.onrender.com/result",{
+    axios.post("https://backend-again-1.onrender.com/result",{
      "departmentname": departmentName,
       "studentid": studentId,
       "result": resultField
@@ -58,7 +58,7 @@ useEffect(()=>{
 
  
 useEffect(()=>{
-axios.get("https://backend-again-d5wz.onrender.com/result").then((data)=>{
+axios.get("https://backend-again-1.onrender.com/result").then((data)=>{
 setResultList(data.data)
 })
 })

@@ -53,7 +53,7 @@ const Registration = () => {
 
      if (userName && email && password) {
        axios
-         .post('https://backend-again-d5wz.onrender.com/registration', {
+         .post('https://backend-again-1.onrender.com/registration', {
            username: userName,
            email: email,
            password: password,

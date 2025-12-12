@@ -23,7 +23,7 @@ const Leave = () => {
     const handleShow = () => setShow(true);
 
 let handleSubmit = ()=>{
-  axios.post("https://backend-again-d5wz.onrender.com/leave",{
+  axios.post("https://backend-again-1.onrender.com/leave",{
     studentName: studentName,
     departmentName: departmentName,
     studentId: studentId
@@ -35,7 +35,7 @@ let handleSubmit = ()=>{
  
 
  useEffect(()=>{
-axios.get("https://backend-again-d5wz.onrender.com/leave").then((data)=> {
+axios.get("https://backend-again-1.onrender.com/leave").then((data)=> {
 setLeaveList(data.data)
 })
 

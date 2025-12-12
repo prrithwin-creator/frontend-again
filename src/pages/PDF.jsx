@@ -23,7 +23,7 @@ const PDF = () => {
 
   const handleClose = () => {
     console.log(file)
-    axios.post("https://backend-again-d5wz.onrender.com/uploadbook", {
+    axios.post("https://backend-again-1.onrender.com/uploadbook", {
       name:name,
       departmentname: departmentname,
       writer: writer,
@@ -48,7 +48,7 @@ let handleChange = (e) => {
 }
 
 useEffect(() => {
-axios.get("https://backend-again-d5wz.onrender.com/allbook").then((data) => {
+axios.get("https://backend-again-1.onrender.com/allbook").then((data) => {
 setBookslist(data.data);
 });
 }, []);
@@ -141,7 +141,7 @@ setBookslist(data.data);
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
-          <td><Link to={`https://backend-again-d5wz.onrender.com/${item.url}`}target='_blank'>Read</Link></td>
+          <td><Link to={`https://backend-again-1.onrender.com/${item.url}`}target='_blank'>Read</Link></td>
          
         </tr>
           
