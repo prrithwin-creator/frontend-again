@@ -136,7 +136,7 @@ useEffect(() => {
           </Form.Group>
 
           <Button onClick={handleFormSubmit} variant="primary" type="submit">
-            Submit 
+            Submit in Registration
           </Button>
         </Form>
 
